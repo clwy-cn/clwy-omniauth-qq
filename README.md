@@ -1,6 +1,10 @@
 # Omniauth QQ
 
-This is QQ strategies collection for OmniAuth 1.0, which includes TQQ and QQ-Connect.
+This is QQ strategies collection for OmniAuth 2.0, which includes TQQ and QQ-Connect.
+
+This gem package is forked from [beenhero/omniauth-qq](https://github.com/beenhero/omniauth-qq).
+Since the original package has not been maintained for a long time, the dependent omniauth version has fallen seriously behind.
+It conflicts with packages like omniauth-github within the same project. Therefore, it was forked and modified for maintenance purposes.
   
 ## [TQQ](http://open.t.qq.com/) OAuth
   Strategy from https://github.com/ballantyne/omniauth-tqq, credit go to Scott Ballantyne.
@@ -14,14 +18,14 @@ This is QQ strategies collection for OmniAuth 1.0, which includes TQQ and QQ-Con
 Add to your `Gemfile`:
 
 ```ruby
-gem 'omniauth-qq'
+gem "clwy-clwy-omniauth-qq"
 ```
 
 Then `bundle install`.
 
 Or install it yourself as:
 
-    $ gem install omniauth-qq
+    $ gem install clwy-omniauth-qq
 
 ## Usage
 
@@ -97,19 +101,7 @@ Here's an example *Authentication Hash* available in `request.env['omniauth.auth
 }
 ```
 
-*PS.* Built and tested on MRI Ruby 1.9.3
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
-
 ## License
-
-Copyright (c) 2012 by Bin He
 
 MIT License
 
