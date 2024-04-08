@@ -18,14 +18,12 @@ It conflicts with packages like omniauth-github within the same project. Therefo
 Add to your `Gemfile`:
 
 ```ruby
+gem "omniauth-rails_csrf_protection"
 gem "clwy-clwy-omniauth-qq"
 ```
 
 Then `bundle install`.
 
-Or install it yourself as:
-
-    $ gem install clwy-omniauth-qq
 
 ## Usage
 
@@ -38,6 +36,14 @@ Rails.application.config.middleware.use OmniAuth::Builder do
   provider :tqq, ENV['TQQ_KEY'], ENV['TQQ_SECRET'], token_params: { client_id: ENV["QQ_CONNECT_KEY"], client_secret: ENV["QQ_CONNECT_SECRET"] }
   config.omniauth :qq_connect, ENV["QQ_CONNECT_KEY"], ENV["QQ_CONNECT_SECRET"], token_params: { client_id: ENV["QQ_CONNECT_KEY"], client_secret: ENV["QQ_CONNECT_SECRET"] }
 end
+```
+
+```erb
+ <%= form_tag("/users/auth/qq_connect", method: "post", data: { turbo: false }) do %>
+  <button type="submit">
+    QQ Login
+  </button>
+<% end %>
 ```
 
 ## Authentication Hash
