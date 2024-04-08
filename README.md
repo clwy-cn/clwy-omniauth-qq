@@ -38,6 +38,10 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+OmniAuth 2.0+ requires using HTTP POST as the request method to initiate the authentication, so your link should be configured with `method: :post`。
+
+If you are using Rails and Devise, you can use the following code:
+
 ```erb
 <%= form_tag("/users/auth/qq_connect", method: "post", data: { turbo: false }) do %>
   <button type="submit">
@@ -45,6 +49,8 @@ end
   </button>
 <% end %>
 ```
+
+More details about how to use OmniAuth with Devise can be found here: https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview
 
 ## Authentication Hash
 
