@@ -35,8 +35,8 @@ Here's a quick example, adding the middleware to a Rails app in `config/initiali
 
 ```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :tqq, ENV['TQQ_KEY'], ENV['TQQ_SECRET']
-  provider :qq_connect, ENV['QQ_CONNECT_KEY'], ENV['QQ_CONNECT_SECRET']
+  provider :tqq, ENV['TQQ_KEY'], ENV['TQQ_SECRET'], token_params: { client_id: ENV["QQ_CONNECT_KEY"], client_secret: ENV["QQ_CONNECT_SECRET"] }
+  config.omniauth :qq_connect, ENV["QQ_CONNECT_KEY"], ENV["QQ_CONNECT_SECRET"], token_params: { client_id: ENV["QQ_CONNECT_KEY"], client_secret: ENV["QQ_CONNECT_SECRET"] }
 end
 ```
 
