@@ -39,7 +39,7 @@ end
 ```
 
 ```erb
- <%= form_tag("/users/auth/qq_connect", method: "post", data: { turbo: false }) do %>
+<%= form_tag("/users/auth/qq_connect", method: "post", data: { turbo: false }) do %>
   <button type="submit">
     QQ Login
   </button>
