@@ -19,7 +19,7 @@ Add to your `Gemfile`:
 
 ```ruby
 gem "omniauth-rails_csrf_protection"
-gem "clwy-clwy-omniauth-qq"
+gem "clwy-omniauth-qq"
 ```
 
 Then `bundle install`.
